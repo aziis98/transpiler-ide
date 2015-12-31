@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Transpiler IDE</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/ui-core.css">
+        <link rel="stylesheet" href="./styles/ui-test.css">
+    </head>
+    <body>
+
+        <pane id="workspace" direction="horizontal">
+            <pane id="tree-view" resizable-right>
+
+                <div class="file-tree">
+                    <div class="branch">
+                        <div class="label">folder1</div>
+                        <div class="leaf">file1.txt</div>
+                        <div class="leaf">file2.txt</div>
+                        <div class="leaf">file3.txt</div>
+                        <div class="branch">
+                            <div class="label">folder2</div>
+                            <div class="leaf">file1.txt</div>
+                            <div class="leaf">file2.txt</div>
+                            <div class="leaf">file3.txt</div>
+                        </div>
+                    </div>
+                    <div class="branch">
+                        <div class="label">folder3</div>
+                        <div class="leaf">file1.txt</div>
+                        <div class="leaf">file2.txt</div>
+                        <div class="leaf">file3.txt</div>
+                    </div>
+                </div>
+
+            </pane>
+            <pane id="editor-view" direction="vertical">
+
+                <pane id="files" direction="horizontal">
+                    <div class="file">file1.txt</div>
+                    <div class="file">file1.txt</div>
+                    <div class="file">file1.txt</div>
+                    <div class="file">file1.txt</div>
+                    <div class="file">file1.txt</div>
+                </pane>
+
+                <pane id="editor" direction="horizontal">
+                    <div id="content">
+
+                    </div>
+                </pane>
+
+            </pane>
+        </pane>
+
+        <script src="./js/ui-compiler.js"></script>
+        <script src="./coffee/ui-menu.js"></script>
+    </body>
+</html>

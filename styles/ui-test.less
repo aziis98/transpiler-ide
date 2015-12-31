@@ -1,0 +1,103 @@
+@ui-darker: #001F27;
+@ui-darker-lighter: lighten(@ui-darker, 5%);
+@ui-color: #002B36;
+@ui-lighter: lighten(@ui-color, 40%);
+@ui-lightest: lighten(@ui-color, 80%);
+
+body {
+    color: @ui-lightest;
+}
+
+#workspace {
+    background: @ui-darker;
+}
+
+#tree-view {
+    width: 300px;
+}
+
+.file-tree {
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 15px;
+    .disable-selection;
+    overflow: auto;
+    width: 100%;
+
+    // Does the tree branching insetting
+    .branch {
+        & > .label {
+            cursor: pointer;
+            transform: translateX(-14px);
+
+            &::before {
+                content: '> ';
+            }
+            &:hover::before {
+                content: '# ';
+            }
+        }
+
+        & > .leaf, & > .branch {
+            padding-left: 20px;
+        }
+    }
+
+    .branch, .leaf {
+        margin: 4px;
+    }
+}
+
+#editor {
+    background: @ui-color;
+
+    #content {
+        font-family: Consolas, monospace;
+        font-size: 15px;
+        white-space: pre;
+        overflow: auto;
+
+        width: 100%;
+    }
+}
+
+#files {
+    flex-wrap: wrap;
+    height: 100%;
+    .file {
+        width: 200px;
+        padding: 8px;
+        text-align: center;
+        .disable-selection;
+        &:hover {
+            border-bottom: 2px solid @ui-lighter;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            // margin-bottom: -2px;
+            background: @ui-darker-lighter;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    background: @ui-color;
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: @ui-darker;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1A3F48;
+    border-radius: 10px;
+    &:hover {
+        border-radius: 0px;
+        width: 15px;
+    }
+}
+
+.disable-selection {
+    -webkit-user-select: none;
+    cursor: default;
+}

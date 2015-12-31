@@ -1,0 +1,45 @@
+body {
+    font-family: Segoe UI, serif;
+    padding: 0px;
+    margin: 0px;
+
+    overflow: hidden;
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    & > .pane {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: auto;
+        height: auto;
+    }
+}
+
+.pane {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+
+    width: 100vw;
+    height: 100vh;
+
+    &[direction=horizontal] {
+        flex-direction: row;
+        & > .pane {
+            height: auto;
+        }
+    }
+    &[direction=vertical] {
+        flex-direction: column;
+        & > .pane {
+            width: auto;
+        }
+    }
+}
